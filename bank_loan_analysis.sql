@@ -201,3 +201,16 @@ FROM customers c
 INNER JOIN loans l ON c.customer_id = l.customer_id
 WHERE l.loan_amount > (SELECT AVG(loan_amount) FROM loans)
 ORDER BY l.loan_amount DESC;
+
+-- Q9 : soft delete
+
+select * from customers;
+alter table customers add column is_delete boolean default false;
+
+SET SQL_SAFE_UPDATES = 0;
+
+update customers SET  is_delete=true 
+where gender='male';
+
+select * from customers
+where is_delete=1;
