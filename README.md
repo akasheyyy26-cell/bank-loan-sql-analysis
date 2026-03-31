@@ -46,6 +46,7 @@ A bank wants to:
 | Q6 | LEFT JOIN + CASE WHEN |
 | Q7 | Window Function — RANK() OVER PARTITION BY |
 | Q8 | Subquery — correlated filter |
+| Q9 | Soft Delete |
 
 ---
 
